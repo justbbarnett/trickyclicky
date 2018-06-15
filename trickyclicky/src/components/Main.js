@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Cards from './Cards.js'
 import cards from '../cards.json';
 import "../styles/Main.css";
@@ -10,17 +11,10 @@ export default class Main extends Component {
     super(props);
     this.state = {
       score : 0,
-      highScore : 0,
+      topScore : 0,
       cards :cards
     };
   }
-
-  // state = {
-  //   userScore: 0,
-  //   topScore: 0,
-  //   cards :cards 
-  // };
-
 
 
   shuffleCards = (arr) => {
@@ -49,7 +43,11 @@ export default class Main extends Component {
     }
     if (newScore === 12) {
       this.setState({ score: 0 });
+      this.setState({
+        topScore: 12
+      })
       this.resetClicked();
+      alert("The force is stong with you!\n Click ok to play again!");
     }
   };
 
@@ -80,6 +78,10 @@ export default class Main extends Component {
     return (
       
       <div className="main">
+
+        <div className="score">
+        <Header score={this.state.score} topScore={this.state.topScore}/>
+        </div>
         <div className="wrapper row">
         
         {cards.map(card => 
