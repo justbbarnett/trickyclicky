@@ -22,19 +22,21 @@ class App extends Component {
     //   topScore: newTopScore
     // })
 
-    if (this.state.clicked === false) {
-      var newScore = this.state.score + 1
+    
 
-      this.setState ({
-        score: newScore
+    // if (this.state.clicked === false) {
+    //   var newScore = this.state.score + 1
+
+    //   this.setState ({
+    //     score: newScore
         
-      })
-    } else {
-      alert("Sorry, you lost. Try Again!");
-      this.setState ({
-        score : 0
-      })
-    }
+    //   })
+    // } else {
+    //   alert("Sorry, you lost. Try Again!");
+    //   this.setState ({
+    //     score : 0
+    //   })
+    // }
   }
 
 

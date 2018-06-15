@@ -9,9 +9,19 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false
+      score : 0,
+      highScore : 0,
+      cards :cards
     };
   }
+
+  // state = {
+  //   userScore: 0,
+  //   topScore: 0,
+  //   cards :cards 
+  // };
+
+
 
   shuffleCards = (arr) => {
     for (let i = (arr.length - 1); i > 0; i--) {
@@ -20,12 +30,48 @@ export default class Main extends Component {
     }
   };
 
-  clickHandler = (id) => {
+  resetClicked = () => {
+    this.state.cards.map(card=>
+      card.clicked = false
+    )
+  }
+
+  handleScore = () => {
     
+    const newScore = this.state.score + 1;
     this.setState({
-      clicked: true
-    });
+      score: newScore
+    })
+    if (newScore >= this.state.topScore) {
+      this.setState({
+        topScore: newScore
+      })
+    }
+    if (newScore === 12) {
+      this.setState({ score: 0 });
+      this.resetClicked();
+    }
+  };
+
+
+  clickHandler = (id) => {
+
+    for (var i = 0; i < this.state.cards.length; i++){
+      if (id === this.state.cards[i].id){
+        if (this.state.cards[i].clicked === false) {
+          this.state.cards[i].clicked = true;
+          this.handleScore();
+        }
+        else if (this.state.cards[i].clicked === true) {
+          this.setState({ userScore: 0 });
+          this.resetClicked();
+          alert("May the force be with you. \nClick same twice you should not ");
+        }
+      }
+    }
+    
     this.shuffleCards(cards); 
+
   }
 
 
