@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import "../styles/Cards.css";
 
-const Cards = props => (
-  <div className="card col-sm-4 col-md-3 col-lg-2" onClick={() => props.clickCount(props.id)}>
+export default class Cards extends Component {
+render() {
+  return (
+  
+  <div className="card col-sm-4 col-md-3 col-lg-2"
+    id = { this.props.id }
+    onClick={() => this.props.clickHandler(this.props.id)}>
     <div className="img-container">
-      <img alt={props.name} src={props.image} />
+      <img alt={this.props.name} src={this.props.image} />
     </div>
   </div>
 );
 
-export default Cards;
+}}
