@@ -65,7 +65,7 @@ export default class Main extends Component {
           this.handleScore();
         }
         else if (this.state.cards[i].clicked === true) {
-          this.setState({ userScore: 0 });
+          this.setState({ score: 0 });
           this.resetClicked();
           alert("May the force be with you. \nClick same twice you should not ");
         }
