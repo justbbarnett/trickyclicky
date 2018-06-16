@@ -53,11 +53,15 @@ export default class Main extends Component {
 
 
   clickHandler = (id) => {
-
+    // let cardCopy = this.state.cards;
     for (var i = 0; i < this.state.cards.length; i++){
       if (id === this.state.cards[i].id){
         if (this.state.cards[i].clicked === false) {
           this.state.cards[i].clicked = true;
+
+          // this.setState({
+          //   cards: cardCopy
+          // })
           this.handleScore();
         }
         else if (this.state.cards[i].clicked === true) {
