@@ -1,3 +1,3 @@
 # trickyclicky
 
-[TrickyClicky}(https://justbbarnett.github.io/trickyclicky/)
+[TrickyClicky](https://justbbarnett.github.io/trickyclicky/)
