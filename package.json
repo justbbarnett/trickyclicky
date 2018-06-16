@@ -8,7 +8,7 @@
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
-  "homepage": "https://justbbarnett.github.io/trikyclicky",
+  "homepage": "https://justbbarnett.github.io/trickyclicky",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
